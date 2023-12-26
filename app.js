@@ -87,7 +87,7 @@ app.get("/home", redirectMiddlewarelogin, (req, res) => {
   const { user } = res.locals;
   res.send(`
   <div>Home page</div>
-  <h1>Welcome ${user.name}</h1>
+  <h1>Hello ${user.name}!</h1>
   <h2>Email:${user.email} </h2>
   <br/>
   <a href='/'>home<a/>
@@ -98,7 +98,7 @@ app.get("/login", redirectMiddlewarehome, (req, res) => {
   <h1>Login Page</h1>
   <form action='/login' method ='post' >
   <input type='email' name='email' placeholder='Email' required/>
-<input type='password' name='password' placeholder='Password' required />
+<input type='password' name='password' placeholder='Password' autocomplete="on" required/>
   <input type='submit' />
   </form>
   <div>Create a new account?<span> <a href='/register'>Register</a>  </span>here</div>
